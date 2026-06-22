@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquee Landing Page</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <div class="login-form" id="loginForm">
+        <form id="agentLoginForm">
+            <input type="password" id="password" name="password">
+            <button type="submit" id="submitButton">Enter</button>
+        </form>
+    </div>
+
+    <div class="container" id="mainContainer" style="display: none;">
+    
+   
+        <div class="trapezoid"></div>
+
+        <div class="landing-page" id="landingPage">
+            <div class="floating-lines-container">
+                <div class="floating-line" id="line1"></div>
+                <div class="floating-line" id="line2"></div>
+                <div class="floating-line-horizontal" id="line3"></div>
+                <div class="floating-line-horizontal" id="line4"></div>
+            </div>
+            
+            <div class="contentContainer">
+                <div class="logo" id="logo">
+                    <img class="WOOPHlogo" id="WOOPHlogo" src="assets/WOOHP_Insignia.webp" alt="WOOPHlogo">
+                </div>
+                
+    
+                <div class="firstQuarter">
+                    <div class="text-container">
+                        <div class="welcome-agent">
+                            <h1>Welcome, Agent</h1>
+                            <p>Welcome to the World Organization of Human Protection (WOOPH), where every mission is a chance to make a difference. As a member of our elite team, you'll have access to cutting-edge technology, top-secret missions, and the opportunity to save the world, one mission at a time.</p>
+                        </div>
+    
+                        <div class="mission-update">
+                            <h2>Latest Mission Updates:</h2>
+                            <p id="changingText"> SFRHIJFNPOL;IJMCEWDN PAWEIFJNEIJOWCNFPWOIJOCE JWBFWFAEHISRBFEHRIUBV OBCVPWIUN</p>
+                            </div>
+    
+                        <div class="why-join">
+                            <h3>Why Join WOOPH</h3>
+                            <ul>
+                                <li><strong>Top-Secret Missions:</strong> Engage in thrilling undercover operations across the globe.</li>
+                                <li><strong>State-of-the-Art Gadgets:</strong> Access the latest in spy technology and gadgets.</li>
+                                <li><strong>Global Impact:</strong> Make a difference and protect humanity from the forces of evil.</li>
+                                <li><strong>Training & Support:</strong> Receive expert training and support from seasoned agents.</li>
+                                <li><strong>Rewards & Recognition:</strong> Earn accolades and recognition for your bravery and success.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="secondQuarter">
+                    <div class="closedcompowder" id="closedcompowder">
+                        <img class="closedcompowder" id="closedcompowderImage" src="assets/compowder/Layer 1.png" alt="closedcompowder">
+                    </div>
+
+                    <div class="phoneCall" id="phoneCall" style="display: none;">
+                        <img class="Jerry" id="Jerry" src="assets/jerryid.png" alt="jerryid">
+                        <div class="callDescription">
+                            <p>"Jerry"</p>
+                            <p>Location: Undisclosed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="closedcompowder" id="compowderReset" style="display: none;">
+                        <img class="closedcompowder" id="compowderReset" src="assets/compowder/Layer 1.png" alt="closedcompowder">
+                    </div>
+                </div>
+    
+    
+    
+                <div class="infographic" id="infographic">
+                    <div class="floating-lines-container">
+                        <div class="floating-line" id="line5"></div>
+                        <div class="floating-line" id="line6"></div>
+                        <div class="floating-line-horizontal" id="line7"></div>
+                        <div class="floating-line-horizontal" id="line8"></div>
+                    </div>
+    
+                    <div id="sphere-container"></div>
+    
+                    <div class="loading-bar-container">
+                        <div class="loading-bar"></div>
+                    </div>
+
+                    <div class="left-square-container">
+                        <div class="square"></div>
+                        <div class="square-filled"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square-filled"></div>
+                    </div>
+
+                    <div class="right-square-container">
+                        <div class="square-filled"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square-filled"></div>
+                        <div class="square"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+
+    </div>
+
+    <script>
+
+
+/* Form Submission */
+document.getElementById('agentLoginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    let passwordValue = document.getElementById('password').value;
+
+    if(passwordValue === 'totallyspies') {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('mainContainer').style.display = 'block';
+
+/* background audio */
+        let backgroundAudio = new Audio('assets/audio/the-big-heist-188391.mp3');
+        backgroundAudio.loop = true;
+        backgroundAudio.volume = 0.4;
+        backgroundAudio.play().catch(function(error){
+            console.log('Background audio failed:', error);
+        });
+
+
+
+        let audio1 = new Audio('assets/audio/ui_sci-fi-sound-36061.mp3');
+        audio1.loop = true;
+        audio1.volume = 0.5; 
+
+        let audio2 = new Audio('assets/audio/computer-processing-sound-effects-short-click-select-03-122132.mp3');
+        audio2.loop = true;
+        audio2.volume = 0.3; 
+
+        let audio3 = new Audio('assets/audio/computer-processing-sound-effects-short-click-select-02-122133.mp3');
+        audio3.loop = true;
+        audio3.volume = 0.5; 
+
+        let audio4 = new Audio('assets/audio/computer-processing-sound-effect-01-122131.mp3');
+        audio4.loop = true;
+        audio4.volume = 0.5; 
+
+        let audios = [audio1, audio2, audio3, audio4];
+
+
+        function playRandomAudio() {
+            let randomIndex = Math.floor(Math.random() * audios.length);
+            audios[randomIndex].play().catch(function(error) {
+                console.log('Audio index failed', error);
+            });
+        }
+
+        playRandomAudio();
+
+/*
+        let audioFiles = [
+            'assets/audio/ui_sci-fi-sound-36061.mp3',
+            'assets/audio/computer-processing-sound-effects-short-click-select-03-122132.mp3',
+            'assets/audio/computer-processing-sound-effects-short-click-select-02-122133.mp3',
+            'assets/audio/computer-processing-sound-effect-01-122131.mp3'
+        ];
+
+        let audios = [];
+
+        audioFiles.forEach(function(filePath) {
+
+            let audio1 = new Audio('assets/audio/ui_sci-fi-sound-36061.mp3');
+            audio1.loop = true;
+            audios.push(audio);
+
+            let audio2 = new Audio('assets/audio/computer-processing-sound-effects-short-click-select-03-122132.mp3');
+            audio2.loop = true;
+            audios.push(audio);
+
+            let audio3 = new Audio('assets/audio/computer-processing-sound-effects-short-click-select-02-122133.mp3');
+            audio3.loop = true;
+            audios.push(audio);
+
+            let audio4 = new Audio('assets/audio/computer-processing-sound-effect-01-122131.mp3');
+            audio4.loop = true;
+            audios.push(audio);
+            
+        });
+
+        function playRandomAudio() {
+            let randomIndex = Math.floor(Math.random() * audios.length);
+            audios[randomIndex].play().catch(function(error) {
+                console.log('Audio index failed', error);
+            });
+        }
+
+        playRandomAudio();
+*/
+
+        setTimeout(startWiggleAnimation, 15000);
+    } 
+    
+    else {
+        alert('Incorrect password.');
+    }
+});
+
+
+window.addEventListener('load', function() {
+
+    let wiggleAudio = new Audio('assets/audio/ringtone.mp3');
+    let phoneCallAudio = new Audio('assets/audio/Call.wav');
+
+
+/*Wiggle Audio */
+    function wiggleCompowder() {
+        wiggleAudio.play().catch(function(error) {
+            console.log('Wiggle audio failed', error);
+        });
+
+        gsap.to('#closedcompowderImage', {
+            duration: 0.1,
+            x: '+=5',
+            ease: 'power1.inOut',
+            yoyo: true,
+            repeat: 5,
+        });
+    }
+
+    setTimeout(function() {
+
+        wiggleCompowder();
+        let wiggleInterval = setInterval(wiggleCompowder, 3000);
+
+        document.getElementById('closedcompowder').addEventListener('click', function() {
+            wiggleAudio.pause();
+            wiggleAudio.currentTime = 0;
+            clearInterval(wiggleInterval);
+
+            document.getElementById('closedcompowderImage').style.display = 'none';
+            document.getElementById('phoneCall').style.display = 'block';
+
+            phoneCallAudio.play().catch(function(error){
+                console.log('Phone call audio playback failed:', error);
+            });
+        });
+    }, 15000);
+
+    phoneCallAudio.onended = function () {
+        console.log('Call ended, changing back to closedcompowder');
+        changeToClosedCompowder();
+    };
+
+    function changeToClosedCompowder() {
+        document.getElementById('phoneCall').style.display = 'none';
+        document.getElementById('compowderReset').style.display = 'block';
+    }
+    
+});  
+
+
+
+/* scramble text */
+    gsap.registerPlugin(TextPlugin);
+
+    function scrambleText() {
+
+        gsap.to("#changingText", {
+                duration: 5,
+                text: {
+                    value: "Operation Sapphire is in full swing, with agents deployed across Europe to intercept the latest threat from the syndicate. Stay tuned for updates on our progress.",
+                    scrambleText: { chars: "0123456789", speed: 1 }
+                },
+            ease: "none",
+            onComplete: () => {
+                setTimeout(scrambleText, 50000);
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        setTimeout(scrambleText, 20000);
+    });
+
+
+
+/* squares */ 
+    document.addEventListener('DOMContentLoaded', () => {
+        const squares = document.querySelectorAll('.square');
+
+        function animateSquares() {
+            squares.forEach((square) => {
+                gsap.to(square, {
+                    duration: Math.random() * 1 + 0.5,
+                    opacity: Math.random() * 0.8 + 0.2,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: 'power1.inOut',
+                    delay: Math.random() * 2
+                });
+            });
+        }
+
+        animateSquares();
+    });
+
+        
+/* lines */
+    document.addEventListener("DOMContentLoaded", function() { 
+        function animateLine1() {
+
+            gsap.set("#line1", {x:-200});
+
+            gsap.to("#line1", {
+                x: "100vw",
+                duration: 10,
+                ease: "none",
+                onComplete: () => {
+                    gsap.delayedCall(3, animateLine1);
+                }
+            });
+
+        };
+
+        animateLine1();
+
+        window.onload=()=>{
+            let firstLine = 0;
+            document.getElementById("line1").addEventListener('click', function(){
+
+                let firstLine = document.getElementById(myLine1);
+
+                if(firstLine==0){
+                    firstLine=1;
+                    myLine1.play();
+                }
+                else{
+                    firstLine=0;
+                    myLine1.pause();
+                }
+            });
+        }
+
+
+        function animateLine2() {
+
+            gsap.set("#line2", {x:2000});
+
+            gsap.from("#line2", {
+                x: "-100vw",
+                duration: 10,
+                ease: "none",
+                onComplete: () => {
+                    gsap.delayedCall(2, animateLine2);
+                }
+            });
+
+            };
+
+            animateLine2();
+
+            window.onload=()=>{
+            let secondLine = 1000;
+            document.getElementById("line2").addEventListener('click', function(){
+
+                let secondLine = document.getElementById(myLine1);
+
+                if(secondLine==0){
+                    secondLine=1;
+                    myLine2.play();
+                }
+                else{
+                    secondLine=0;
+                    myLine2.pause();
+                }
+            });
+        }
+
+
+
+        function animateLine3() {
+
+            gsap.set("#line3", {y:1000});
+
+            gsap.from("#line3", {
+                y: "-100vh",
+                duration: 8,
+                ease: "none",
+                onComplete: () => {
+                    gsap.delayedCall(1, animateLine3);
+                }
+            });
+
+            };
+
+            animateLine3();
+
+            window.onload=()=>{
+            let thirdLine = 1000;
+            document.getElementById("line3").addEventListener('click', function(){
+
+                let thirdLine = document.getElementById(myLine3);
+
+                if(thirdLine==0){
+                    thirdLine=1;
+                    myLine3.play();
+                }
+                else{
+                    thirdLine=0;
+                    myLine3.pause();
+                }
+            });
+        }
+
+        function animateLine4() {
+
+            gsap.set("#line4", {y:-1000});
+
+            gsap.from("#line4", {
+                y: "100vh",
+                duration: 15,
+                ease: "none",
+                onComplete: () => {
+                    gsap.delayedCall(3, animateLine4);
+                }
+            });
+
+            };
+
+            animateLine4();
+
+            window.onload=()=>{
+            let fourthLine = 1000;
+            document.getElementById("line4").addEventListener('click', function(){
+
+                let fourthLine = document.getElementById(myLine4);
+
+                if(fourthLine==0){
+                    fourthLine=1;
+                    myLine4.play();
+                }
+                else{
+                    fourthLine=0;
+                    myLine4.pause();
+                }
+            });
+        }
+
+
+/*inforgraphic function lines*/
+        function animateLine5() {
+
+            gsap.set("#line5", {x:-200});
+
+            gsap.to("#line5", {
+                x: "100vw",
+                duration: 10,
+                ease: "none",
+                onComplete: () => {
+                    gsap.delayedCall(3, animateLine5);
+                }
+            });
+
+            };
+
+            animateLine5();
+
+            window.onload=()=>{
+            let fifthLine = 0;
+            document.getElementById("line5").addEventListener('click', function(){
+
+                let fifthLine = document.getElementById(myLine5);
+
+                if(fifthLine==0){
+                    fifthLine=1;
+                    myLine5.play();
+                }
+                else{
+                    fifthLine=0;
+                    myLine5.pause();
+                }
+            });
+        }
+
+
+        function animateLine6() {
+
+            gsap.set("#line6", {x:2000});
+
+            gsap.from("#line6", {
+                x: "-100vw",
+                duration: 10,
+                ease: "none",
+                onComplete: () => {
+                    gsap.delayedCall(2, animateLine6);
+                }
+            });
+
+            };
+
+            animateLine6();
+
+            window.onload=()=>{
+            let sixthLine = 1000;
+            document.getElementById("line6").addEventListener('click', function(){
+
+                let sixthLine = document.getElementById(myLine6);
+
+                if(sixthLine==0){
+                    sixthLine=1;
+                    myLine6.play();
+                }
+                else{
+                    sixthLine=0;
+                    myLine6.pause();
+                }
+            });
+        }
+
+
+
+        function animateLine7() {
+
+            gsap.set("#line7", {y:1000});
+
+            gsap.from("#line7", {
+                y: "-100vh",
+                duration: 8,
+                ease: "none",
+                onComplete: () => {
+                    gsap.delayedCall(1, animateLine7);
+                }
+            });
+
+            };
+
+            animateLine7();
+
+            window.onload=()=>{
+            let seventhLine = 1000;
+            document.getElementById("line7").addEventListener('click', function(){
+
+                let seventhLine = document.getElementById(myLine7);
+
+                if(seventhLine==0){
+                    seventhLine=1;
+                    myLine7.play();
+                }
+                else{
+                    seventhLine=0;
+                    myLine7.pause();
+                }
+            });
+        }
+
+        function animateLine8() {
+
+            gsap.set("#line8", {y:-1000});
+
+            gsap.from("#line8", {
+                y: "100vh",
+                duration: 15,
+                ease: "none",
+                onComplete: () => {
+                    gsap.delayedCall(3, animateLine8);
+                }
+            });
+
+            };
+
+            animateLine8();
+
+            window.onload=()=>{
+            let eigthLine = 1000;
+            document.getElementById("line8").addEventListener('click', function(){
+
+                let eigthLine = document.getElementById(myLine8);
+
+                if(eigthLine==0){
+                    eigthLine=1;
+                    myLine8.play();
+                }
+                else{
+                    eigthLine=0;
+                    myLine8.pause();
+                }
+            });
+        }
+  
+            // Start animations
+        animateLine1();
+        animateLine2();
+        animateLine3();
+        animateLine4();
+        animateLine5();
+        animateLine6();
+        animateLine7();
+        animateLine8();
+
+    });
+
+
+
+
+// three.js
+
+document.addEventListener("DOMContentLoaded", function () {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setClearColor(0x000000, 0);
+
+    const sphereContainer = document.getElementById("sphere-container");
+
+    function setRendererSize() {
+        if (sphereContainer.clientWidth === 0 || sphereContainer.clientHeight === 0) {
+            console.warn("Container not ready, retrying...");
+            setTimeout(setRendererSize, 100); 
+            return;
+        }
+
+        renderer.setSize(sphereContainer.clientWidth, sphereContainer.clientHeight);
+        camera.aspect = sphereContainer.clientWidth / sphereContainer.clientHeight;
+        camera.updateProjectionMatrix();
+        sphereContainer.appendChild(renderer.domElement);
+    }
+
+    setRendererSize();
+    window.addEventListener("resize", setRendererSize);
+
+    // Sphere Geometry
+    const geometry = new THREE.SphereGeometry(5, 32, 32);
+    const material = new THREE.MeshBasicMaterial({ color: 0x5E67C6, wireframe: true });
+    const sphere = new THREE.Mesh(geometry, material);
+    scene.add(sphere);
+
+    // White Dots
+    const whiteDotGeometry = new THREE.BufferGeometry();
+    const whiteDotMaterial = new THREE.PointsMaterial({
+        color: 0xFFFFFF,
+        size: 0.4, 
+        transparent: true,
+        opacity: 0.4, 
+        blending: THREE.AdditiveBlending
+    });
+    const whiteDots = new THREE.Points(whiteDotGeometry, whiteDotMaterial);
+    sphere.add(whiteDots);
+
+    const whiteDotPositions = [];
+    const numWhiteDots = 250;
+
+    for (let i = 0; i < numWhiteDots; i++) {
+        const radius = 5;
+        const theta = Math.random() * Math.PI * 2;
+        const phi = Math.random() * Math.PI;
+
+        const x = radius * Math.cos(theta) * Math.sin(phi);
+        const y = radius * Math.sin(theta) * Math.sin(phi);
+        const z = radius * Math.cos(phi);
+
+        whiteDotPositions.push(x, y, z);
+    }
+
+    whiteDotGeometry.setAttribute('position', new THREE.Float32BufferAttribute(whiteDotPositions, 3));
+    whiteDotMaterial.needsUpdate = true;
+
+
+    // Purple Dots
+    const purpleDotGeometry = new THREE.BufferGeometry();
+    const purpleDotMaterial = new THREE.PointsMaterial({
+        color: 0x9A6A99,
+        size: 0.3,
+        transparent: true,
+        opacity: 0.0, 
+        blending: THREE.AdditiveBlending
+    });
+    const purpleDots = new THREE.Points(purpleDotGeometry, purpleDotMaterial);
+    sphere.add(purpleDots);
+
+    const purpleDotPositions = [];
+    const numPurpleDots = 500;
+
+    for (let i = 0; i < numPurpleDots; i++) {
+        const radius = 5;
+        const theta = Math.random() * Math.PI * 2;
+        const phi = Math.random() * Math.PI;
+
+        const x = radius * Math.cos(theta) * Math.sin(phi);
+        const y = radius * Math.sin(theta) * Math.sin(phi);
+        const z = radius * Math.cos(phi);
+
+        purpleDotPositions.push(x, y, z);
+    }
+    purpleDotGeometry.setAttribute('position', new THREE.Float32BufferAttribute(purpleDotPositions, 3));
+
+    // Purple Sots updating
+    purpleDotMaterial.needsUpdate = true;
+
+    camera.position.z = 15;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        sphere.rotation.x += 0.005;
+        sphere.rotation.y += 0.005;
+
+        // Purple Dot Opacity Animation 
+        if (purpleDotMaterial.opacity < 0.6) {
+            purpleDotMaterial.opacity += 0.005; 
+            purpleDotMaterial.needsUpdate = true;
+        }
+
+        renderer.render(scene, camera);
+    }
+
+    animate();
+});
+
+    </script>
+
+</body>
+</html>
